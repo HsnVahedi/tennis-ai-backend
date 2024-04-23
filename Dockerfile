@@ -21,6 +21,7 @@ ENV URL=0.0.0.0:8000
 CMD ["tail", "-f", "/dev/null"]
 
 FROM base as prod
-RUN pip install "gunicorn==20.0.4"
-RUN python manage.py collectstatic --noinput --clear
-CMD set -xe; python manage.py migrate --noinput; gunicorn tennis.wsgi:application
+CMD ["tail", "-f", "/dev/null"]
+# RUN pip install "gunicorn==20.0.4"
+# RUN python manage.py collectstatic --noinput --clear
+# CMD set -xe; python manage.py migrate --noinput; gunicorn tennis.wsgi:application

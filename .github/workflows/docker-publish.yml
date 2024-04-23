@@ -1,12 +1,12 @@
-name: Build and Push Docker image
+name: Build and Push Docker images
 
 on:
   push:
     branches:
-      - master  # Set this to your default branch if it's not 'master'
+      - master
 
 jobs:
-  build:
+  build-and-push:
     runs-on: ubuntu-latest
     steps:
     - name: Check out the repository
@@ -21,10 +21,20 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Build and push
+    - name: Build and push dev image
       uses: docker/build-push-action@v4
       with:
         context: .
         file: ./Dockerfile
         push: true
-        tags: hsndocker/tennis-ai-backend:${{ github.sha }}
+        tags: hsndocker/tennis-ai-backend-dev:${{ github.sha }}
+        target: dev
+
+    - name: Build and push prod image
+      uses: docker/build-push-action@v4
+      with:
+        context: .
+        file: ./Dockerfile
+        push: true
+        tags: hsndocker/tennis-ai-backend-prod:${{ github.sha }}
+        target: prod

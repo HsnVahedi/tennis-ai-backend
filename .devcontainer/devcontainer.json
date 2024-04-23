@@ -1,0 +1,17 @@
+{
+    "name": "Tennis AI Backend Development",
+    "dockerComposeFile": "../environments/dev/docker-compose.yml",
+    "service": "backend",
+    "workspaceFolder": "/app",
+    "forwardPorts": [8000],
+    "build": {
+        "dockerCompose": {
+            "runServices": ["backend"]
+        }
+    },
+    "overrideCommand": false,
+    "postCreateCommand": "echo 'Container ready!'",
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/app,type=bind,consistency=cached"
+    ]
+}

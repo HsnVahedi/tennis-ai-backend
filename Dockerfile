@@ -17,7 +17,6 @@ FROM base as dev
 # Install git
 RUN apt-get update
 RUN apt-get install -y git
-ENV URL=0.0.0.0:8000
 CMD ["tail", "-f", "/dev/null"]
 
 FROM base as prod

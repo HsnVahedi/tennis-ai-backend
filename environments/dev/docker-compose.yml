@@ -50,6 +50,7 @@ services:
     ports:
       - "5433:5432"
     volumes:
-      - tennis_ai_postgres_dev:/var/lib/postgresql/data
+      - tennis_ai_postgres_dev_dummy:/var/lib/postgresql/data
 volumes:
   tennis_ai_postgres_dev:
+  tennis_ai_postgres_dev_dummy:

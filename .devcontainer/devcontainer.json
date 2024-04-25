@@ -3,7 +3,7 @@
     "dockerComposeFile": "../environments/dev/docker-compose.yml",
     "service": "backend",
     "workspaceFolder": "/app",
-    "forwardPorts": [8000],
+    "forwardPorts": [8000, 8001],
     "build": {
         "dockerCompose": {
             "runServices": ["backend"]

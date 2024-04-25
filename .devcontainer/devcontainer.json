@@ -6,7 +6,7 @@
     "forwardPorts": [8000, 8001],
     "build": {
         "dockerCompose": {
-            "runServices": ["backend"]
+            "runServices": ["backend", "backend2"]
         }
     },
     "overrideCommand": false,

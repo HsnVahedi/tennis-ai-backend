@@ -1,7 +1,7 @@
 {
     "name": "Tennis AI Backend Development",
     "dockerComposeFile": "../environments/dev/docker-compose.yml",
-    "service": "backend",
+    "service": "backend2",
     "workspaceFolder": "/app",
     "forwardPorts": [8000, 8001],
     "build": {

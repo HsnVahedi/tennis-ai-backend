@@ -188,3 +188,12 @@ REST_FRAMEWORK = {
     'rest_framework.authentication.TokenAuthentication',                                          
   )                                                                                               
 }
+
+FRONTEND_HOST = os.getenv('FRONTEND_HOST', "localhost")
+FRONTEND_PORT = os.getenv('FRONTEND_PORT', "3000")
+FRONTEND_URL = f'http://{FRONTEND_HOST}:{FRONTEND_PORT}'
+
+# corsheaders
+CORS_ALLOWED_ORIGINS = [
+    FRONTEND_URL,
+]
